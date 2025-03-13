@@ -64,6 +64,7 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.24f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\ProbabilitiesController.cs" />
     <Compile Include="Assets\Scripts\SprintState.cs" />
     <Compile Include="Assets\Scripts\HealthController.cs" />
     <Compile Include="Assets\Character Stats\Examples\Items &amp; Inventory\Scripts\EquippableItem.cs" />
@@ -73,6 +74,7 @@
     <Compile Include="Assets\Character Stats\Examples\Power Ups\Scripts\Movement.cs" />
     <Compile Include="Assets\Scripts\SimpleMove.cs" />
     <Compile Include="Assets\Scripts\StateMachine.cs" />
+    <Compile Include="Assets\Scripts\BossAI\BossSpecialAttack.cs" />
     <Compile Include="Assets\Scripts\NormalAttackState.cs" />
     <Compile Include="Assets\Scripts\Inventory System\UIInventoryDescription.cs" />
     <Compile Include="Assets\Character Stats\Examples\Power Ups\Scripts\MouseLook.cs" />
@@ -80,12 +82,15 @@
     <Compile Include="Assets\Character Stats\Examples\Power Ups\Scripts\PlatformGenerator.cs" />
     <Compile Include="Assets\Character Stats\Examples\Power Ups\Scripts\Platform.cs" />
     <Compile Include="Assets\Scripts\SaveSystem\ItemSaveIO.cs" />
+    <Compile Include="Assets\Scripts\BossAI\WolfBossJumpAttack.cs" />
+    <Compile Include="Assets\Scripts\BossAI\TurnOnCollider.cs" />
     <Compile Include="Assets\Scripts\JumpState.cs" />
     <Compile Include="Assets\Character Stats\Examples\Power Ups\Scripts\PlayerTextUI.cs" />
     <Compile Include="Assets\Scripts\Inventory System\MouseFollower.cs" />
     <Compile Include="Assets\Scripts\SaveSystem\SimpleSaveSystem.cs" />
     <Compile Include="Assets\Scripts\SaveSystem\ItemDatabase.cs" />
     <Compile Include="Assets\Scripts\MoveState.cs" />
+    <Compile Include="Assets\Scripts\BossAI\BossStateFactory.cs" />
     <Compile Include="Assets\Scripts\Inventory System\EdibleItemSO.cs" />
     <Compile Include="Assets\Character Stats\Examples\Power Ups\Scripts\Player.cs" />
     <Compile Include="Assets\Scripts\BaseState.cs" />
@@ -97,23 +102,31 @@
     <Compile Include="Assets\Scripts\Inventory System\SlotController.cs" />
     <Compile Include="Assets\DoubleL\Demo\DemoCameraController.cs" />
     <Compile Include="Assets\Character Stats\CharacterStat.cs" />
+    <Compile Include="Assets\Scripts\BossAI\BossStateMachine.cs" />
     <Compile Include="Assets\Scripts\FallState.cs" />
     <Compile Include="Assets\Scripts\SaveSystem\FileReadWrite.cs" />
+    <Compile Include="Assets\Scripts\BossAI\BossNormalAttackState.cs" />
     <Compile Include="Assets\Scripts\EnemyAI.cs" />
     <Compile Include="Assets\Character Stats\Examples\Items &amp; Inventory\Scripts\StatDisplay.cs" />
     <Compile Include="Assets\Scripts\Inventory System\SlotPage.cs" />
     <Compile Include="Assets\Character Stats\Examples\Power Ups\Scripts\Powerup.cs" />
+    <Compile Include="Assets\Scripts\BossAI\BossTakeDameState.cs" />
     <Compile Include="Assets\Scripts\StateFactory.cs" />
     <Compile Include="Assets\Character Stats\Examples\Items &amp; Inventory\Scripts\Inventory.cs" />
+    <Compile Include="Assets\Scripts\BossAI\BossWalk.cs" />
     <Compile Include="Assets\Scripts\Inventory System\InventoryController.cs" />
     <Compile Include="Assets\Character Stats\Examples\Power Ups\Scripts\DeathZone.cs" />
+    <Compile Include="Assets\Scripts\BossAI\BossRushIn.cs" />
+    <Compile Include="Assets\Scripts\BossAI\BossBaseState.cs" />
     <Compile Include="Assets\Scripts\AIBehaviour.cs" />
     <Compile Include="Assets\Character Stats\StatModifier.cs" />
     <Compile Include="Assets\Character Stats\Examples\Power Ups\Scripts\PlayerBarUI.cs" />
     <Compile Include="Assets\Character Stats\Examples\Items &amp; Inventory\Scripts\Character.cs" />
     <Compile Include="Assets\Scripts\SaveData.cs" />
+    <Compile Include="Assets\Scripts\BossAI\BossRun.cs" />
     <Compile Include="Assets\Scripts\IdleState.cs" />
     <Compile Include="Assets\Character Stats\Examples\Items &amp; Inventory\Scripts\StatTooltip.cs" />
+    <Compile Include="Assets\Scripts\BossAI\BossIdleState.cs" />
     <Compile Include="Assets\Character Stats\Examples\Items &amp; Inventory\Scripts\ItemTooltip.cs" />
     <Compile Include="Assets\Scripts\SaveSystem\ItemSaveData.cs" />
   </ItemGroup>
