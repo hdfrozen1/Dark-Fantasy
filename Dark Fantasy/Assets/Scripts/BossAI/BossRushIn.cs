@@ -9,7 +9,7 @@ public class BossRushIn : BossBaseState
     }
     public override void CheckSwitchState()
     {
-        if(_context.AnimatorIsPlaying(0.71f)){
+        if(!_context.TheAnimator.AnimationIsPlaying(0.71f)){
             SwitchState(_factory.NormalAttack());
         }
     }
@@ -17,13 +17,14 @@ public class BossRushIn : BossBaseState
     public override void EnterState()
     {
         _exitState = false;
-        //_context.Anim.CrossFade("rushInAttack",1);
-        _context.Anim.Play("rushInAttack");
+        //_context.Anim.CrossFade("rushInAttack",0.2f);
+        //_context.Anim.Play("rushInAttack");
+        _context.TheAnimator.PlayAnimation("rushInAttack",0);
     }
 
     public override void ExitState()
     {
-        //throw new System.NotImplementedException();
+        _exitState = true;
     }
 
     public override void UpdateState()

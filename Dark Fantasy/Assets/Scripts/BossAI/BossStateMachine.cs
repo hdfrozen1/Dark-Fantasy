@@ -5,14 +5,8 @@ using UnityEngine.AI;
 
 public class BossStateMachine : MonoBehaviour
 {
-    [SerializeField] private float viewRadius;
-    [SerializeField] private LayerMask _playerMask;
-    [SerializeField] private LayerMask obstacleMask;
-    [SerializeField] private float _attackRadius;
-    public bool SawPlayer = false;
     private BossStateFactory _state;
     public BossBaseState CurrentState;
-    public Animator Anim;
     public NavMeshAgent _bossAgent;
     public TurnOnCollider ArmCollider;
     public TurnOnCollider BodyCollider;
@@ -20,46 +14,25 @@ public class BossStateMachine : MonoBehaviour
     public bool _canDoMeleeAttack = false;
     public bool _canRushInAttack = false;
     public Transform PlayerPosition;
+    public HandleAnimator TheAnimator;
     void Awake()
     {
         _state = new BossStateFactory(this);
     }
     void Start()
     {
+        TheAnimator = GetComponentInChildren<HandleAnimator>();
         BodyCollider.PlayerHasDetected += PlayerInNormalAttackRange;
         ArmCollider.PlayerHasDetected += HitPlayer;
         RushInCollider.PlayerHasDetected += CanRushInPlayer;
         CurrentState = _state.Idle();
-        //CurrentState.EnterState();
+        CurrentState.EnterState();
     }
     void Update()
     {
         CurrentState.UpdateState();
     }
 
-    private void FindingPlayer()
-
-    {
-        //bool isInRange = false;
-        Collider[] playerInRange = Physics.OverlapSphere(transform.position, viewRadius, _playerMask);
-        for (int i = 0; i < playerInRange.Length; i++)
-        {
-            Transform player = playerInRange[i].transform;
-            Vector3 dirToPlayer = (player.position - transform.position).normalized;
-            if (Vector3.Angle(transform.forward, dirToPlayer) < 60 / 2)
-            {
-                float dstToPlayer = Vector3.Distance(transform.position, player.position);
-                if (!Physics.Raycast(transform.position, dirToPlayer, dstToPlayer, obstacleMask))
-                {
-                    SawPlayer = true;
-                    break;
-                }
-
-            }
-
-        }
-
-    }
     private void PlayerInNormalAttackRange(bool detect)
     {
         _canDoMeleeAttack = detect;
@@ -71,10 +44,6 @@ public class BossStateMachine : MonoBehaviour
             // cause dame to player
             Debug.Log("hit the player");
         }
-    }
-    public bool AnimatorIsPlaying(float ratio = 0.9f)
-    {
-        return Anim.GetCurrentAnimatorStateInfo(0).normalizedTime < ratio;
     }
 
     private void CanRushInPlayer(bool canRushIn)
@@ -92,5 +61,6 @@ public class BossStateMachine : MonoBehaviour
     public void TurnOnNavMesh()
     {
         _bossAgent.enabled = true;
+        
     }
 }

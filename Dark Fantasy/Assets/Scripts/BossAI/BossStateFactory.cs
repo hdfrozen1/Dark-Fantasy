@@ -34,7 +34,7 @@ public class BossStateFactory
     }
 
 
-    public BossBaseState GetRandomOutcome((BossBaseState outcome, double probability)[] outcomes)
+    public BossBaseState GetRandomOutcome((BossBaseState outcome, double probability)[] outcomes,out int indexOfState)
     {
         Random rand = new Random();
         double randomValue = rand.NextDouble(); // Generates a number between 0.0 and 1.0
@@ -48,10 +48,12 @@ public class BossStateFactory
 
         for(int i = 0;i< newRange.Count;i++){
             if(randomValue <= newRange[i]){
+                indexOfState = i;
                 return outcomes[i].outcome;
+
             }
         }
-
+        indexOfState = outcomes.Length - 1;
         return outcomes[outcomes.Length - 1].outcome; // Fallback (should never happen)
     }
 }

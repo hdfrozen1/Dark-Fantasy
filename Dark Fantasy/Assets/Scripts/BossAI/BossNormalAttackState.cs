@@ -9,7 +9,7 @@ public class BossNormalAttackState : BossBaseState
     }
     public override void CheckSwitchState()
     {
-        if(_context.AnimatorIsPlaying(0.7f)){
+        if(!_context.TheAnimator.AnimationIsPlaying(0.7f)){
             SwitchState(_factory.Idle());
         }
     }
@@ -17,13 +17,14 @@ public class BossNormalAttackState : BossBaseState
     public override void EnterState()
     {
         _exitState = false;
-        //_context.Anim.CrossFade("normalAttack",1);
-        _context.Anim.Play("normalAttack");
+        //_context.Anim.CrossFade("normalAttack",0.1f);
+        //_context.Anim.Play("normalAttack");
+        _context.TheAnimator.PlayAnimation("normalAttack",0);
     }
 
     public override void ExitState()
     {
-        
+        _exitState = true;
     }
 
     public override void UpdateState()

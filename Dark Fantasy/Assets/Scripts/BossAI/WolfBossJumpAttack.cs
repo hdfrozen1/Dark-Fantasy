@@ -18,7 +18,8 @@ public class WolfBossJumpAttack : MonoBehaviour
 
     void Start()
     {
-        bossStateMachine = GetComponent<BossStateMachine>();
+        //bossStateMachine = GetComponent<BossStateMachine>();
+        player = bossStateMachine.PlayerPosition;
     }
 
     // Gọi từ Animation Event khi sói bắt đầu nhảy

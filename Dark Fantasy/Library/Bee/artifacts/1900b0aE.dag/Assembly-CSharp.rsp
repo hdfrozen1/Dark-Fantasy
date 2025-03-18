@@ -399,6 +399,7 @@
 "Assets/Scripts/BossAI/BossStateMachine.cs"
 "Assets/Scripts/BossAI/BossTakeDameState.cs"
 "Assets/Scripts/BossAI/BossWalk.cs"
+"Assets/Scripts/BossAI/HandleAnimator.cs"
 "Assets/Scripts/BossAI/TurnOnCollider.cs"
 "Assets/Scripts/BossAI/WolfBossJumpAttack.cs"
 "Assets/Scripts/EnemyAI.cs"
@@ -429,6 +430,7 @@
 "Assets/Scripts/SprintState.cs"
 "Assets/Scripts/StateFactory.cs"
 "Assets/Scripts/StateMachine.cs"
+"Assets/Scripts/TestMovementScript.cs"
 -langversion:9.0
 
 /deterministic

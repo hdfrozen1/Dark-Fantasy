@@ -9,7 +9,7 @@ public class BossSpecialAttack : BossBaseState
     }
     public override void CheckSwitchState()
     {
-        if(_context.AnimatorIsPlaying()){
+        if(!_context.TheAnimator.AnimationIsPlaying()){
             SwitchState(_factory.Idle());
         }
     }
@@ -17,13 +17,14 @@ public class BossSpecialAttack : BossBaseState
     public override void EnterState()
     {
         _exitState = false;
-        //_context.Anim.CrossFade("specialAttack",1);
-        _context.Anim.Play("specialAttack");
+        //_context.Anim.CrossFade("specialAttack",0.3f);
+        //_context.Anim.Play("specialAttack");
+        _context.TheAnimator.PlayAnimation("specialAttack");
     }
 
     public override void ExitState()
     {
-        //throw new System.NotImplementedException();
+        _exitState = true;
     }
 
     public override void UpdateState()
